@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Playlist</title>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="playlist.json"></script>
+
 
 </head>
 <body>
@@ -39,12 +41,15 @@
 
                  </div>
     
+    
+    
     <script>
-
-    window.onload = function(){
-            var button = document.getElementById("button");
-            button.addEventListener("click", filter(s));
-        }
+        
+/*
+    $(document).ready(function(){
+            button = document.getElementById("filter");
+            button.addEventListener("click", filter);
+        });
     
        var data = fetch("./playlist.json")
             .then(response => {
@@ -56,15 +61,24 @@
             .then(response => {
                  return response.json();
             })
-        .then(data => {filter(data)})
+        .then(data => {filter()})
 
         var data = fetch("./playlist.json")
             .then(response => {
                  return response.json();
             })
         .then(data => {serializeJSON(data)})
-        
+       
+        */
 
+        window.onload = function () {
+            s = data;
+            console.log(data);
+            getSongs(s);
+            button = document.getElementById("filter");
+            button.addEventListener("click", filter());
+            serializeJSON(data)
+        }
 
         function getSongs(s){
             str = "";
@@ -78,7 +92,7 @@
             document.getElementById("displaySongs").innerHTML = str;
         }
 
-        function filter(s){
+        function filter(){
             res = "";
             genre = document.getElementById("filter").value;
                 for (i=0; i<s.length; i++){
@@ -92,6 +106,7 @@
             document.getElementById("displaySongs").innerHTML = res;
             
         }
+
 
         //Serialize the JSON
         function serializeJSON(data){

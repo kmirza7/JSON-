@@ -1,9 +1,9 @@
 
-[
+data = [
     
     {
       "title": "Hold Me Closer",
-      "artist": ["Elton John", "Britney Spears"],
+      "artist": ["Elton John", " Britney Spears"],
       "genre": ["Pop"],
       "year": "2021"
     },
@@ -21,7 +21,7 @@
     },
     {
       "title": "Bad Decisions",
-      "artist": ["Benny Blanco", "Snoop Dog"],
+      "artist": ["Benny Blanco", " Snoop Dog"],
       "genre": ["Pop"],
       "year": "2022"
     },
