@@ -1,0 +1,83 @@
+
+[
+    
+    {
+      "title": "Hold Me Closer",
+      "artist": ["Elton John", "Britney Spears"],
+      "genre": ["Pop"],
+      "year": "2021"
+    },
+    {
+      "title": "Bad Habit",
+      "artist": ["Steve Lacy"],
+      "genre": ["Soul"],
+      "year": "2022"
+    },
+    {
+      "title": "Alone",
+      "artist": ["Rod Wave"],
+      "genre": ["Rap"],
+      "year": "2022"
+    },
+    {
+      "title": "Bad Decisions",
+      "artist": ["Benny Blanco", "Snoop Dog"],
+      "genre": ["Pop"],
+      "year": "2022"
+    },
+    {
+      "title": "Die For You",
+      "artist": ["The Weekend"],
+      "genre": ["R&B"],
+      "year": "2017"
+    },
+    {
+      "title": "Symphony",
+      "artist": ["Imagine Dragons"],
+      "genre": ["Alternative"],
+      "year": "2022"
+    },
+    {
+      "title": "Waking Up Dreaming",
+      "artist": ["Shania Twain"],
+      "genre": ["Country"],
+      "year": "2022"
+    },
+    {
+      "title": "Violet Sky",
+      "artist": ["Phello"],
+      "genre": ["Dance", "Electronic"],
+      "year": "2022"
+    },
+    {
+      "title": "1979",
+      "artist": ["Smashing Pumpkins"],
+      "genre": ["Rock"],
+      "year": "1995"
+    },
+    {
+      "title": "24K Magic",
+      "artist": ["Bruno Mars"],
+      "genre": ["Pop"],
+      "year": "2022"
+    },
+    {
+      "title": "7 Rings",
+      "artist": ["Ariana Grande"],
+      "genre": ["Pop"],
+      "year": "2021"
+    },
+    {
+      "title": "Alright",
+      "artist": ["Supergrass"],
+      "genre": ["Alternative"],
+      "year": "1995"
+    },
+    {
+      "title": "Animals",
+      "artist": ["Martin Garrix"],
+      "genre": ["Dance"],
+      "year": "2022"
+    }
+  ]
+

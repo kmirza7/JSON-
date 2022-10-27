@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Playlist</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+</head>
+<body>
+    <h1>Playlist</h1>
+
+            <h2>Pick a Song: </h2>
+            <!--Filtering by Genre-->
+            <form id="form">
+                <select name="filter" id="filter">
+                    <option value="Pop">Pop</option>
+                    <option value="Soul">Soul</option>
+                    <option value="Rap">Rap</option>
+                    <option value="R&B">R&B</option>
+                    <option value="Alternative">Alternative</option>
+                    <option value="Country">Country</option>
+                    <option value="Dance">Dance</option>
+                    <option value="Electronic">Electronic</option>
+                    <option value="Rock">Rock</option>
+                </select>
+                <button name="filter" id="filter">Filter</button>
+            </form>
+                <br>
+                 <div id="displaySongs">
+
+                 </div>
+
+                 <br><br>
+
+                 <div id="Serialize">
+                    <h2>Serialized Data: </h2>
+
+                 </div>
+    
+    <script>
+
+    window.onload = function(){
+            var button = document.getElementById("button");
+            button.addEventListener("click", filter);
+        }
+    
+       var data = fetch("./playlist.json")
+            .then(response => {
+                 return response.json();
+            })
+        .then(data => {getSongs(data)})
+
+        var data = fetch("./playlist.json")
+            .then(response => {
+                 return response.json();
+            })
+        .then(data => {filter(data)})
+
+        var data = fetch("./playlist.json")
+            .then(response => {
+                 return response.json();
+            })
+        .then(data => {serializeJSON(data)})
+        
+
+
+        function getSongs(s){
+            str = "";
+            for(i=0; i<s.length; i++){
+                str+= "<b>Song: " + s[i].title + "</b><br>";
+                str+= "Artist(s): " + s[i].artist +"<br>";
+                str+= "Genre(s): " + s[i].genre + "<br>";
+                str+= "Year: " + s[i].year +"<br><br>";
+            }
+    
+            document.getElementById("displaySongs").innerHTML = str;
+        }
+
+        function filter(s){
+            res = "";
+            genre = document.getElementById("filter").value;
+                for (i=0; i<s.length; i++){
+                    if (s[i].genre == genre) {
+                        res += "<b>Song: " + s[i].title + "</b><br>";
+                        res += "Artist(s): " + s[i].artist +"<br>";
+                        res += "Genre(s): " + s[i].genre + "<br>";
+                        res += "Year: " + s[i].year +"<br><br>";
+                    }
+                }
+            document.getElementById("displaySongs").innerHTML = res;
+            
+        }
+
+        //Serialize the JSON
+        function serializeJSON(data){
+        for (i=0; i<data.length; i++){
+            serialize = JSON.stringify(data[i]);
+            document.getElementById("Serialize").innerHTML += serialize + "<br>";
+        }
+    }
+        
+
+    </script>
+
+</body>
+</html>
