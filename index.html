@@ -28,7 +28,6 @@
                     <option value="Rock">Rock</option>
                 </select>
             
-                
             </form>
                 <br>
                  <div id="displaySongs">
@@ -42,38 +41,16 @@
 
                  </div>
     
-    
-    
+
     <script>
+
+        //To read the .json file to JS
+
         fetch('https://github.com/kmirza7/JSON-/blob/75a7298ebd3d59c75afd8e97acf8c8982e3ed6a8/playlist.json')
             .then((response) => response.json())
         
-            
-/*
-    $(document).ready(function(){
-            button = document.getElementById("filter");
-            button.addEventListener("click", filter);
-        });
-    
-       var data = fetch("./playlist.json")
-            .then(response => {
-                 return response.json();
-            })
-        .then(data => {getSongs(data)})
-
-        var data = fetch("./playlist.json")
-            .then(response => {
-                 return response.json();
-            })
-        .then(data => {filter()})
-
-        var data = fetch("./playlist.json")
-            .then(response => {
-                 return response.json();
-            })
-        .then(data => {serializeJSON(data)})
-       
-        */
+        
+        //Functions to load when the window is loaded:
 
         window.onload = function () {
             s = data;
@@ -82,10 +59,11 @@
            
             serializeJSON(data)
 
-            //document.querySelector('filter').addEventListener('changed', filter);
             const select = document.getElementById('filter');
             select.addEventListener('change', filter);
         }
+
+        //Function to display Songs on the window:
 
         function getSongs(s){
             str = "";
@@ -99,6 +77,8 @@
             document.getElementById("displaySongs").innerHTML = str;
         }
 
+        //Function to filter the songs:
+        
         function filter(){
             res = "";
             genre = document.getElementById("filter").value;
