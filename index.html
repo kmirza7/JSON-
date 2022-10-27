@@ -43,7 +43,7 @@
 
     window.onload = function(){
             var button = document.getElementById("button");
-            button.addEventListener("click", filter);
+            button.addEventListener("click", filter(s));
         }
     
        var data = fetch("./playlist.json")
