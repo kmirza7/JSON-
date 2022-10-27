@@ -17,7 +17,7 @@
             <h2>Pick a Song: </h2>
             <!--Filtering by Genre-->
             <form id="form">
-                <select name="filter" id="filter">
+                <select name="select" id="filter">
                     <option value="Pop">Pop</option>
                     <option value="Soul">Soul</option>
                     <option value="Rap">Rap</option>
@@ -25,10 +25,10 @@
                     <option value="Alternative">Alternative</option>
                     <option value="Country">Country</option>
                     <option value="Dance">Dance</option>
-                    <option value="Electronic">Electronic</option>
                     <option value="Rock">Rock</option>
                 </select>
-                <button name="filter" id="filter">Filter</button>
+            
+                
             </form>
                 <br>
                  <div id="displaySongs">
@@ -79,9 +79,12 @@
             s = data;
             console.log(data);
             getSongs(s);
-            button = document.getElementById("filter");
-            button.addEventListener("click", filter());
+           
             serializeJSON(data)
+
+            //document.querySelector('filter').addEventListener('changed', filter);
+            const select = document.getElementById('filter');
+            select.addEventListener('change', filter);
         }
 
         function getSongs(s){
